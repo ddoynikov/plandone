@@ -16,11 +16,43 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
+	<link
+        href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap&subset=cyrillic"
+        rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+<header class="container header ">
+        <div class="menu">
+            <div class="header__main">
+                
+                <div class="header__item">
+                    <a href="#" class="header__logo">
+                        <img src="/img/logo-main.png" alt="Plan Done" class="logo-main">
+                    </a>
+                </div>
+                
+                <div class="hamburger-menu header__item ">
+                    <input id="menu__toggle" type="checkbox" />
+                    <label class="header__item menu__btn" for="menu__toggle">
+                        <span></span>
+                    </label>
+                    <ul class="header__menu menu__box">
+                        <li class="menu__item"><a href="index.html" class="menu__link">Главная</a></li>
+                        <li class="menu__item"><a href="about.html" class="menu__link">О
+                                проекте</a></li>
+                        <li class="menu__item"><a href="courses.html" class="menu__link">Курсы</a></li>
+                        <li class="menu__item"><a href="blog.html" class="menu__link">Блог</a>
+                        </li>
+                        <li class="menu__item"><a href="contacts.html" class="menu__link">Контакты</a></li>
+                    </ul>
+                </div>
+            <div class="header__item">
+                <a href="#" class="header__button">Начать обучение</a>
+            </div>
+</div>
+<!--
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'plandone' ); ?></a>
 
@@ -42,7 +74,7 @@
 				?>
 				<p class="site-description"><?php echo $plandone_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
-		</div><!-- .site-branding -->
+		</div>
 
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'plandone' ); ?></button>
@@ -52,7 +84,8 @@
 				'menu_id'        => 'primary-menu',
 			) );
 			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+		</nav>
+	</header>
 
 	<div id="content" class="site-content">
+			-->

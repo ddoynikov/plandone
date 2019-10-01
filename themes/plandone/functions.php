@@ -122,7 +122,17 @@ add_action( 'widgets_init', 'plandone_widgets_init' );
 function plandone_scripts() {
 	wp_enqueue_style( 'plandone-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'plandone-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_style('plandone-main', get_template_directory_uri() . '/assets/styles/main.css');
+
+	wp_deregister_script( 'jquery' );
+
+	wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
+
+	wp_enqueue_script( 'jquery' );
+
+	wp_enqueue_script( 'plandone-main', get_template_directory_uri() . '/assets/js/main.js', array(), '2.0', true );
+
+	wp_enqueue_script( 'plandone-vendor', get_template_directory_uri() . '/assets/js/vendor.js', array(), '1.0', true );
 
 	wp_enqueue_script( 'plandone-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
