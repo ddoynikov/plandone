@@ -131,7 +131,9 @@ function plandone_scripts() {
 
 	wp_enqueue_script( 'jquery' );
 
-	wp_enqueue_script( 'plandone-main', get_template_directory_uri() . '/assets/js/main.js', array(), '2.0', true );
+	wp_enqueue_script( 'plandone-parallax', 'https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js', array(), '1.0', true );
+
+	wp_enqueue_script( 'plandone-main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0', true );
 
 	wp_enqueue_script( 'plandone-vendor', get_template_directory_uri() . '/assets/js/vendor.js', array(), '1.0', true );
 

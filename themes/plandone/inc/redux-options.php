@@ -277,6 +277,67 @@
      */
 
     // -> START Basic Fields
+Redux::setSection( $opt_name, array(
+        'title'            => __( 'Home', 'redux-framework-demo' ),
+        'id'               => 'home',
+        'desc'             => __( 'These are really basic fields!', 'redux-framework-demo' ),
+        'customizer_width' => '400px',
+        'icon'             => 'el el-home'
+    ) );
+
+Redux::setSection( $opt_name, array(
+        'title'            => __( 'Header', 'redux-framework-demo' ),
+        'id'               => 'globaldata-header',
+        'subsection'       => true,
+        'customizer_width' => '500px',
+        'desc'             => __( '', 'redux-framework-demo' ),
+        'fields'           => array(
+            array(
+                'id'       => 'logo-blue',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'URL', '' ),
+                'compiler' => 'true',
+                //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
+                //'hint'      => array(
+                //    'title'     => 'Hint Title',
+                //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
+                //)
+            ),
+        )
+    ) );
+
+Redux::setSection( $opt_name, array(
+        'title'            => __( 'Footer', 'redux-framework-demo' ),
+        'id'               => 'globaldata-footer',
+        'subsection'       => true,
+        'customizer_width' => '500px',
+        'desc'             => __( '', 'redux-framework-demo' ),
+        'fields'           => array(
+            
+            array(
+                'id'       => 'copyright',
+                'type'     => 'text',
+                'title'    => __( 'Копирайт', 'redux-framework-demo' ),
+                'desc'     => __( '', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+            array(
+                'id'       => 'logo-white',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'URL', '' ),
+                'compiler' => 'true',
+                //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
+                //'hint'      => array(
+                //    'title'     => 'Hint Title',
+                //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
+                //)
+            ),
+        )
+    ) );
+
+
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Basic Fields', 'redux-framework-demo' ),
         'id'               => 'basic',
@@ -285,58 +346,7 @@
         'icon'             => 'el el-home'
     ) );
 
-    Redux::setSection( $opt_name, array(
-        'title'            => __( 'Checkbox', 'redux-framework-demo' ),
-        'id'               => 'basic-checkbox',
-        'subsection'       => true,
-        'customizer_width' => '450px',
-        'desc'             => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
-        'fields'           => array(
-            array(
-                'id'       => 'opt-checkbox',
-                'type'     => 'checkbox',
-                'title'    => __( 'Checkbox Option', 'redux-framework-demo' ),
-                'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
-                'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
-                'default'  => '1'// 1 = on | 0 = off
-            ),
-            array(
-                'id'       => 'opt-multi-check',
-                'type'     => 'checkbox',
-                'title'    => __( 'Multi Checkbox Option', 'redux-framework-demo' ),
-                'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
-                'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
-                //Must provide key => value pairs for multi checkbox options
-                'options'  => array(
-                    '1' => 'Opt 1',
-                    '2' => 'Opt 2',
-                    '3' => 'Opt 3'
-                ),
-                //See how std has changed? you also don't need to specify opts that are 0.
-                'default'  => array(
-                    '1' => '1',
-                    '2' => '0',
-                    '3' => '0'
-                )
-            ),
-            array(
-                'id'       => 'opt-checkbox-data',
-                'type'     => 'checkbox',
-                'title'    => __( 'Multi Checkbox Option (with menu data)', 'redux-framework-demo' ),
-                'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
-                'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
-                'data'     => 'menu'
-            ),
-            array(
-                'id'       => 'opt-checkbox-sidebar',
-                'type'     => 'checkbox',
-                'title'    => __( 'Multi Checkbox Option (with sidebar data)', 'redux-framework-demo' ),
-                'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
-                'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
-                'data'     => 'sidebars'
-            ),
-        )
-    ) );
+
     Redux::setSection( $opt_name, array(
         'title'            => __( 'Radio', 'redux-framework-demo' ),
         'id'               => 'basic-Radio',
@@ -617,8 +627,8 @@
                 'id'       => 'opt-color-footer',
                 'type'     => 'color',
                 'title'    => __( 'Footer Background Color', 'redux-framework-demo' ),
-                'subtitle' => __( 'Pick a background color for the footer (default: #dd9933).', 'redux-framework-demo' ),
-                'default'  => '#dd9933',
+                'subtitle' => __( 'Pick a background color for the footer (default: #151221).', 'redux-framework-demo' ),
+                'default'  => '#151221',
                 'validate' => 'color',
             ),
         ),
@@ -1701,7 +1711,7 @@
     ) );
 
     // -> START Typography
-    Redux::setSection( $opt_name, array(
+    /* Redux::setSection( $opt_name, array(
         'title'  => __( 'Typography', 'redux-framework-demo' ),
         'id'     => 'typography',
         'desc'   => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/typography/" target="_blank">docs.reduxframework.com/core/fields/typography/</a>',
@@ -1715,7 +1725,7 @@
                 'google'   => true,
                 'output' => array('h1, h2, h3, h4'),
                 'default'  => array(
-                    'color'       => '#dd9933',
+                    'color'       => '#151221',
                     'font-size'   => '30px',
                     'font-family' => 'Arial,Helvetica,sans-serif',
                     'font-weight' => 'Normal',
@@ -1757,7 +1767,7 @@
                 ),
             ),
         )
-    ) );
+    ) ); */
 
     // -> START Additional Types
     Redux::setSection( $opt_name, array(

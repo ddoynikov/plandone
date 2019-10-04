@@ -1,14 +1,8 @@
 <?php
 /**
  * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package plandone
  */
-
+global $redux_demo;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -27,8 +21,8 @@
 	<div class="menu">
 		<div class="header__main">
 			<div class="header__item">
-				<a href="index.html" class="header__logo">
-					<img src="/img/logo-main.png" alt="Plan Done" class="logo-main">
+				<a href="<?php echo home_url("/"); ?>" class="header__logo">
+					<img src="<?php echo $redux_demo['logo-blue']['url']; ?>" alt="Plan Done" class="logo-main">
 				</a>
 			</div>
 			<div class="hamburger-menu header__item ">
@@ -37,14 +31,14 @@
 					<span></span>
 				</label>
 				<?php
-			wp_nav_menu( array(
-				'theme_location' => 'header-main',
-                'menu'            => '',
-                'container'       => 'null',
-                'menu_class'      => 'header__menu menu__box', 
-                'menu_id'         => 'header__menu'
-			) );
-			?>
+					wp_nav_menu( array(
+						'theme_location' => 'header-main',
+						'menu'            => '',
+						'container'       => 'null',
+						'menu_class'      => 'header__menu menu__box', 
+						'menu_id'         => 'header__menu'
+					) );
+				?>
 			</div>
 		<div class="header__item">
 			<a href="#" class="header__button">Начать обучение</a>

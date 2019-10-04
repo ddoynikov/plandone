@@ -1,15 +1,17 @@
+<?php global $redux_demo; ?>
 <footer class="footer">
     <div class="footer__box container">
         <div class="footer__items">
             <div class="footer__item footer__item_logo">
                 <a href="#" class="footer__logo">
-                    <img src="img/logo-white.webp" alt="Logo">
+                    <img src="<?php echo $redux_demo['logo-white']['url']; ?>" alt="Logo">
                 </a>
             </div>
             <div class="footer__item">
                 <p class="footer__copyrights">
-                    2019 © Success Marketing <br>
-                    Все права защищены
+                    <?php 
+                        echo $redux_demo['copyright'];
+                    ?>
                 </p>
                 <a href="#" class="oferta">Публичная оферта</a>
             </div>
@@ -44,7 +46,7 @@
                 <button id='buttonLogin' type="submit" class="footer__btn act">›</button> 
             </form>
             <p class="footer__media">
-                <img src="/img/icons/lock.png" alt=""> Обещаем никакого спама!
+                <img src="<?php echo get_template_directory_uri() . '/assets/img/icons/lock.png'; ?>" alt=""> Обещаем никакого спама!
             </p>
         </div>
         <div class="footer__items">

@@ -28,12 +28,12 @@
                 <div class="geometric__wrapper">
             <!-- Parallax -->
             <div id="scene">
-                    <div class="bg-2" data-depth="0.03"><img src="/img/header-bg/bg-h2.png" alt=""></div>
-                    <div class="bg-3" data-depth="0.06"><img src="/img/header-bg/bg-h3.png" alt=""></div>
-                    <div class="gm-1" data-depth="0.04"><img src="/img/header-bg/gm-1.png" alt=""></div>
-                    <div class="gm-2" data-depth="0.08"><img src="/img/header-bg/gm-2.png" alt=""></div>
-                    <div class="gm-3" data-depth="0.07"><img src="/img/header-bg/gm-3.png" alt=""></div>
-                    <div class="gm-4" data-depth="0.1"><img src="/img/header-bg/gm-4.png" alt=""></div>
+                    <div class="bg-2" data-depth="0.03"><img src="<?php echo get_template_directory_uri() . '/assets/img/header-bg/bg-h2.png'; ?>" alt=""></div>
+                    <div class="bg-3" data-depth="0.06"><img src="<?php echo get_template_directory_uri() . '/assets/img/header-bg/bg-h3.png'; ?>" alt=""></div>
+                    <div class="gm-1" data-depth="0.04"><img src="<?php echo get_template_directory_uri() . '/assets/img/header-bg/gm-1.png'; ?>" alt=""></div>
+                    <div class="gm-2" data-depth="0.08"><img src="<?php echo get_template_directory_uri() . '/assets/img/header-bg/gm-2.png'; ?>" alt=""></div>
+                    <div class="gm-3" data-depth="0.07"><img src="<?php echo get_template_directory_uri() . '/assets/img/header-bg/gm-3.png'; ?>" alt=""></div>
+                    <div class="gm-4" data-depth="0.1"><img src="<?php echo get_template_directory_uri() . '/assets/img/header-bg/gm-4.png'; ?>" alt=""></div>
               </div>
 
             <!-- End Parallax -->
@@ -43,19 +43,19 @@
  
         <div class="rtb">
             <div class="rtb__item">
-                <img src="img/icons/rocket.webp" alt="Start" class="rtb__img">
+                <img src="<?php echo get_template_directory_uri() . '/assets/img/icons/rocket.png'; ?>" alt="Start" class="rtb__img">
                 <p class="rtb__text">
                     Обучение с азов до профессионального уровня
                 </p>
             </div>
             <div class="rtb__item">
-                <img src="img/icons/information.webp" alt="Start" class="rtb__img">
+                <img src="<?php echo get_template_directory_uri() . '/assets/img/icons/information.png'; ?>" alt="Info" class="rtb__img">
                 <p class="rtb__text">
                     Система и методология, а не готовые решения
                 </p>
             </div>
             <div class="rtb__item">
-                <img src="img/icons/chat.webp" alt="Start" class="rtb__img">
+                <img src="<?php echo get_template_directory_uri() . '/assets/img/icons/chat.png'; ?>" alt="Chat" class="rtb__img">
                 <p class="rtb__text">
                     Детальный разбор ДЗ от практиков
                 </p>
@@ -79,14 +79,14 @@
                     </p>
                 </div>
                 <div class="internet__item">
-                    <img src="img/icons/tool.webp" alt="Tools" class="internet__item_title">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/icons/tool.png'; ?>" alt="Tools" class="internet__item_title">
                     <p class="internet__item_text">
                         Интернет и классический маркетинг используют одинаковые инструменты
                         и не противоречат друг другу
                     </p>
                 </div>
                 <div class="internet__item">
-                    <img src="img/icons/doc.webp" alt="System" class="internet__item_title">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/icons/doc.png'; ?>" alt="System" class="internet__item_title">
                     <p class="internet__item_text">
                         Мы не против интернет-маркетинга и не отговариваем от него. Мы выступаем за системность
                     </p>
@@ -111,7 +111,7 @@
                                 Базовый курс по основам Excel c домашними заданиями.
                             </p>
                             <div class="for-free__wrapper">
-                                <img src="img/icons/money.webp" alt="Money" class="monet__img">
+                                <img src="<?php echo get_template_directory_uri() . '/assets/img/icons/money.png'; ?>" alt="" class="monet__img">
                                 <p class="price">Бесплатно</p>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                                 Курс по основам презентаций с проверкой домашних заданий
                             </p>
                             <div class="for-free__wrapper">
-                                <img src="img/icons/money.webp" alt="Money" class="monet__img">
+                                <img src="<?php echo get_template_directory_uri() . '/assets/img/icons/money.png'; ?>" alt="Money" class="monet__img">
                                 <p class="price">500₽</p>
                             </div>
                         </div>
