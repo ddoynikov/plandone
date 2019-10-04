@@ -44,7 +44,8 @@ if ( ! function_exists( 'plandone_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'plandone' ),
+			'header-main' => esc_html__( 'header-main', 'plandone' ),
+			'footer' => esc_html__( 'Footer Menu', 'plandone' )
 		) );
 
 		/*
@@ -143,24 +144,10 @@ function plandone_scripts() {
 add_action( 'wp_enqueue_scripts', 'plandone_scripts' );
 
 /**
- * Implement the Custom Header feature.
+ * Подключение Redux
  */
-require get_template_directory() . '/inc/custom-header.php';
+	require get_template_directory() . '/inc/redux-options.php';
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.

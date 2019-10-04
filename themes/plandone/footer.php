@@ -18,13 +18,16 @@
             <h5 class="footer__title">
                 Основное
             </h5>
-            <ul class="footer__menu">
-                <li class="footer__menu_items">Главная</li>
-                <li class="footer__menu_items">О проекте</li>
-                <li class="footer__menu_items">Курсы</li>
-                <li class="footer__menu_items">Блог</li>
-                <li class="footer__menu_items">Контакты</li>
-            </ul>
+
+            <?php
+			wp_nav_menu( array(
+				'theme_location' => 'footer',
+                'menu'            => '',
+                'container'       => 'null',
+                'menu_class'      => 'footer__menu', 
+                'menu_id'         => 'footer__menu',
+			) );
+			?>
         </div>
         <div class="footer__items">
             <h5 class="footer__title">
@@ -34,9 +37,11 @@
                 Разрешите нам присылать вам уведомления о новых эффективных материалах
             </p>
             <form class="footer__form" action="contact-form.php" method="post">
-                <input id='input-email' class="order__input input-email" name="email" id="email" type="text" placeholder="Введите ваш Email" 
-                    required>                
-                <button id='buttonLogin' type="submit" class="footer__btn act">›</button>
+                <input id='input-email' class="order__input input-email" name="email" type="text" placeholder="Введите ваш Email" 
+                    required>   
+                <input id='input-name' class="order__input input-name hide" name="name" type="text" placeholder="Введите ваше имя" 
+                    required>
+                <button id='buttonLogin' type="submit" class="footer__btn act">›</button> 
             </form>
             <p class="footer__media">
                 <img src="/img/icons/lock.png" alt=""> Обещаем никакого спама!

@@ -2958,7 +2958,7 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).scroll(function () {
   } else {
     btn.removeClass('show');
   }
-}); //Паралакс в header
+}); //Паралакс для главной
 
 var scene = document.getElementById('scene');
 var parallaxInstance = new Parallax(scene, {
@@ -2977,6 +2977,11 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
     jquery__WEBPACK_IMPORTED_MODULE_2___default()('.open').removeClass('oppenned');
     event.stopPropagation();
   });
+});
+jquery__WEBPACK_IMPORTED_MODULE_2___default()("#buttonLogin").click(function (e) {
+  e.preventDefault();
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()("#input-email").addClass('hide');
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()("#input-name").removeClass('hide');
 });
 
 /***/ })
