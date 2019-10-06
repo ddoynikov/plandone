@@ -17,7 +17,7 @@ global $redux_demo;
 </head>
 
 <body <?php body_class(); ?>>
-<header class="container header ">
+<header class="contacts__header container ">
 	<div class="menu">
 		<div class="header__main">
 			<div class="header__item">
@@ -34,7 +34,8 @@ global $redux_demo;
 					wp_nav_menu( array(
 						'theme_location' => 'header-main',
 						'menu'            => '',
-						'menu_class'      => 'header__menu menu__box', 
+						'container'       => 'null',
+						'menu_class'      => 'header__menu header-2 menu__box', 
 						'menu_id'         => 'header__menu'
 					) );
 				?>

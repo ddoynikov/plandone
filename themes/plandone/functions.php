@@ -40,8 +40,42 @@ if ( ! function_exists( 'plandone_setup' ) ) :
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
-		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'post-thumbnails' ); 
 
+		add_image_size('post_thumbnail', 1300, 500, true); // Превьюшка в блоге
+
+		add_filter('excerpt_more', function($more) { // Добавляем многоточие после обрезания текста
+				return ' ...';
+			});
+
+		add_filter( 'excerpt_length', function(){ // Обрезаем текст
+			return 35;
+		} );
+
+		// удаляет H2 из шаблона пагинации
+		add_filter('navigation_markup_template', 'my_navigation_template', 10, 2 );
+		function my_navigation_template( $template, $class ){
+			/*
+			Вид базового шаблона:
+			<nav class="navigation %1$s" role="navigation">
+				<h2 class="screen-reader-text">%2$s</h2>
+				<div class="nav-links">%3$s</div>
+			</nav>
+			*/
+
+			return '
+			<nav class="navigation %1$s" role="navigation">
+				<div class="nav-links">%3$s</div>
+			</nav>    
+			';
+		} 
+
+		add_filter( 'document_title_separator', 'my_sep' );
+			function my_sep( $sep ){
+				$sep = ' | ';
+
+				return $sep;
+			}
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'header-main' => esc_html__( 'header-main', 'plandone' ),
@@ -106,13 +140,13 @@ add_action( 'after_setup_theme', 'plandone_content_width', 0 );
  */
 function plandone_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'plandone' ),
+		'name'          => esc_html__( 'Сайдбар в блоге', 'plandone' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'plandone' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'description'   => esc_html__( 'Добавить виджеты здесь', 'plandone' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'plandone_widgets_init' );
@@ -157,4 +191,7 @@ add_action( 'wp_enqueue_scripts', 'plandone_scripts' );
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
+
 

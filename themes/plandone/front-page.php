@@ -3,16 +3,19 @@
  * Template name: Homepage Design
  */
  get_header();
+global $redux_demo;
  ?>
-
 <div class="content__main">
             <div class="content__left">
                 <h1 class="header__offer">
-                    Обучение системному маркетингу
+                    <?php 
+                        echo $redux_demo['offer'];
+                    ?>
                 </h1>
                 <p class="header__descriptor">
-                    Получите системные знания в оффлайн маркетинге и отработайте
-                    их на практике. Пройдите путь от нуля до профессионала
+                    <?php 
+                        echo $redux_demo['home-textarea'];
+                    ?>
                 </p>
                 <div class="button_theme button__theme_header">
                     <div class="button__item">
@@ -101,14 +104,16 @@
             </h2>
             <div class="free__courses_wrapper">
                 <a href="#" class="free__courses_item">
-                    <div class="free__courses_img free__courses_img-1"><img class="free__img free__img-1" src="/img/icons/excel.png" alt=""></div>
+                    <div class="free__courses_img free__courses_img-1"><img class="free__img free__img-1" src="<?php echo $redux_demo['free-1-img']['url']; ?>" alt=""></div>
                     <div class="free__courses_content">
                         <div class="course__title free__course_title">
-                            <h3>Excel: Основы</h3>
+                            <h3>
+                                <?php echo $redux_demo['name']; ?>
+                            </h3>
                         </div>
                         <div class="free__course_descriptor">
                             <p>
-                                Базовый курс по основам Excel c домашними заданиями.
+                                <?php echo $redux_demo['free-1-desc']; ?>
                             </p>
                             <div class="for-free__wrapper">
                                 <img src="<?php echo get_template_directory_uri() . '/assets/img/icons/money.png'; ?>" alt="" class="monet__img">
@@ -118,14 +123,14 @@
                     </div>
                 </a>
                 <a href="#" class="free__courses_item">
-                    <div class="free__courses_img free__courses_img-2"><img class="free__img free__img-2" src="/img/icons/powerpoint.png" alt=""></div>
+                    <div class="free__courses_img free__courses_img-2"><img class="free__img free__img-2" src="<?php echo $redux_demo['free-2-img']['url']; ?>" alt=""></div>
                     <div class="free__courses_content">
                         <div class="course__title free__course_title">
-                            <h3>PowetPoint: Начало</h3>
+                            <h3><?php echo $redux_demo['name2']; ?></h3>
                         </div>
                         <div class="free__course_descriptor">
                             <p>
-                                Курс по основам презентаций с проверкой домашних заданий
+                                <?php echo $redux_demo['free-2-desc']; ?>
                             </p>
                             <div class="for-free__wrapper">
                                 <img src="<?php echo get_template_directory_uri() . '/assets/img/icons/money.png'; ?>" alt="Money" class="monet__img">
@@ -175,11 +180,52 @@
                 </a>
             </div>
     </section>
-    <section class="blog slider__container">
-        <h2 class="blog__title">
+    <section  class="blog-page container">
+<div id="primary" class="blog-page__articles blog-page__post-main">
+    <h2 class="blog__title">
             Читайте наш блог, в нем много полезного
         </h2>
 
+            <?php
+            // параметры по умолчанию
+                $posts = get_posts( array(
+                    'numberposts' => 2,
+                    'post_type'   => 'post',
+                    'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                ) );
+
+                foreach( $posts as $post ){
+                    setup_postdata($post);
+                    ?> 
+                    <a href="<?php the_permalink(); ?>" class="post__link">
+                        <article class="post">
+                                <h4 class="post__title ">
+                                    <?php the_title(); ?>
+                                </h4>
+                                <p class="post-meta">
+                                    <time class="date" datetime="06-08-2019T11:24"><?php the_time('d.m.Y') ?></time>
+                        /
+                        <span class="categories">
+                            <?php the_category($separator = ' / ', ''); ?>
+                        </span>
+                    </p>
+                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('post_thumbnail') ?></a>
+                        <a href="<?php the_permalink(); ?>"><?php the_excerpt('10'); ?></a>
+                            </article>
+                        </a>
+                    <?php 
+                }
+
+                wp_reset_postdata(); // сброс
+            ?>
+
+            
+</div>
+    </section>
+    <!-- <section class="blog slider__container">
+        <h2 class="blog__title">
+            Читайте наш блог, в нем много полезного
+        </h2>
         <div class="blog__wrapper">
             <a href="blog-open.html" class="blog__item">
                 <h4 class="blog__item_title">Тема №1:</h4>
@@ -240,9 +286,9 @@
                 </p>
                 <div class="blog__img blog__img_1"></div>
                 <div class="blog__button">Читать</div>
-            </a>
-        </div>
-    </section>
+            </a> 
+        </div> 
+    </section> -->
     <section class="start">
         <div class="start__wrapper">
             <h2 class="start__title">

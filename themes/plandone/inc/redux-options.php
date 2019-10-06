@@ -285,6 +285,8 @@ Redux::setSection( $opt_name, array(
         'icon'             => 'el el-home'
     ) );
 
+// Собственное меню
+
 Redux::setSection( $opt_name, array(
         'title'            => __( 'Header', 'redux-framework-demo' ),
         'id'               => 'globaldata-header',
@@ -303,6 +305,79 @@ Redux::setSection( $opt_name, array(
                 //    'title'     => 'Hint Title',
                 //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
                 //)
+            ),
+            array(
+                'id'       => 'offer',
+                'type'     => 'text',
+                'title'    => __( 'Text Field', 'redux-framework-demo' ),
+                'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+                'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                'default'  => 'Default Text',
+            ),
+            array(
+                'id'       => 'home-textarea',
+                'type'     => 'textarea',
+                'title'    => __( 'Дескриптор оффера', 'redux-framework-demo' ),
+                'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+                'desc'     => __( 'Добавить текст в поле', 'redux-framework-demo' ),
+                'default'  => 'Default Text',
+            ),
+        )
+    ) );
+
+ Redux::setSection( $opt_name, array(
+        'title'            => __( 'Бесплатные курсы', 'redux-framework-demo' ),
+        'id'               => 'globaldata-free',
+        'subsection'       => true,
+        'customizer_width' => '500px',
+        'desc'             => __( '', 'redux-framework-demo' ),
+        'fields'           => array(
+            
+            array(
+                'id'       => 'free-1-img',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'Фото курса 1', '' ),
+                'compiler' => 'true',
+            ),
+            array(
+                'id'       => 'name',
+                'type'     => 'text',
+                'title'    => __( 'Название курса 1', 'redux-framework-demo' ),
+                'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+                'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                'default'  => 'Default Text',
+            ),
+            array(
+                'id'       => 'free-1-desc',
+                'type'     => 'textarea',
+                'title'    => __( 'Описание курса 1', 'redux-framework-demo' ),
+                'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+                'desc'     => __( 'Добавить текст в поле', 'redux-framework-demo' ),
+                'default'  => 'Default Text',
+            ),
+            array(
+                'id'       => 'free-2-img',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'Фото курса 2', '' ),
+                'compiler' => 'true',
+            ),
+            array(
+                'id'       => 'name2',
+                'type'     => 'text',
+                'title'    => __( 'Название курса 2', 'redux-framework-demo' ),
+                'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+                'desc'     => __( 'Field Description', 'redux-framework-demo' ),
+                'default'  => 'Default Text',
+            ),
+            array(
+                'id'       => 'free-2-desc',
+                'type'     => 'textarea',
+                'title'    => __( 'Описание курса 2', 'redux-framework-demo' ),
+                'subtitle' => __( 'Subtitle', 'redux-framework-demo' ),
+                'desc'     => __( 'Добавить текст в поле', 'redux-framework-demo' ),
+                'default'  => 'Default Text',
             ),
         )
     ) );

@@ -11,7 +11,13 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
 ?>
+ <div id="secondary" class="blog-page__articles blog-page__sidbar">
+            <aside id="sidebar" class="sidebar">
+                <?php dynamic_sidebar( 'sidebar-1' ); ?>
+                
+            </aside>
+    </div>
 
-<aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- #secondary -->
+
+	  
+
