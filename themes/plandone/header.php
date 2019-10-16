@@ -40,7 +40,7 @@ global $redux_demo;
 				?>
 			</div>
 		<div class="header__item">
-			<a href="#" class="header__button">Начать обучение</a>
+			<a href="#" class="header__button">Начать обучениеее</a>
 		</div>
 </div>
 <!--
